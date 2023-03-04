@@ -1,9 +1,12 @@
 data SEGMENT
-    dusha DB 01 
+    PSP  DB CD20;
 data ENDS
 code SEGMENT
-    ASSUME CS:CODE, DS:DATA
+    ASSUME CS:CODE ,DS:DATA
 start:
-   MOV ax,0010H
+    mov ax,data
+
+    mov ax,4C00h
+    int 21h
 code ENDS
 END start
